@@ -88,10 +88,11 @@ ISR(TIMER1_COMPA_vect) {
   ++sample;
 }
 
-void startPlayback(unsigned char const *data, int length)
+void startPlayback(int pin, unsigned char const *data, int length)
 {
   sounddata_data = data;
   sounddata_length = length;
+  speakerPin = pin;
 
   pinMode(speakerPin, OUTPUT);
   
